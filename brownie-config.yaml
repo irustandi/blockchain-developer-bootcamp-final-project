@@ -80,5 +80,7 @@ networks:
 wallets:
   from_key: ${PRIVATE_KEY}
   from_mnemonic: ${MNEMONIC}
+dotenv:
+  .env
 
   # could also do from_mnemonic, and you'd have to change the accounts.add to accounts.from_mnemonic

@@ -1,0 +1,14 @@
+{
+  "networks": {
+    "rinkeby": {
+      "fact_item": "0x01BE23585060835E02B77ef475b0Cc51aA1e0709",
+      "vote_manager": "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
+      "verify": true
+    },
+    "kovan": {
+      "fact_item": "0xDbBd06320779522E77921453996fcc2202Fc1632",
+      "vote_manager": "0xAd5568409c1C7eFd43EfB2C9F284495Afb6c59BB",
+      "verify": true
+    }
+  }
+}
