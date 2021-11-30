@@ -1,4 +1,4 @@
-# Decentralized Censorship-Resistant News Evaluation Application
+# Decentrafact: Decentralized Censorship-Resistant News Evaluation Application (aka Fact-Checking)
 
 ## Background
 
@@ -15,4 +15,10 @@ In the application, a user can have a couple of roles:
 
 To facilitate meaningful activities, it is important to design the mechanism so that the incentives of the users are aligned properly. To achieve this, we propose a reward/punishment mechanisms using tokens specific to the app.
 
+Challenge: cannot rely on an oracle
+Probabilistic consensus
+
 TODO: governance mechanism
+
+Protocol token: FACT token
+Each news article is captured by an ERC721 token

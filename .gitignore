@@ -1,3 +1,10 @@
+.github/
+
+# chainlink-mix
+.vscode
+.env
+build/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,7 +12,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+build/
 # Distribution / packaging
 .Python
 build/
@@ -127,3 +134,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+node_modules/
