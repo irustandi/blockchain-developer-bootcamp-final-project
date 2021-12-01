@@ -43,6 +43,7 @@ def test_can_mint_fact(
     )
 
     assert fact_item.totalSupply() == 1
+    assert fact_item.tokenURI(1) == "http://www.dummy.com"
 
 
 def test_cannot_mint_same_fact(

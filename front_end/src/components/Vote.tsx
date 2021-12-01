@@ -60,7 +60,7 @@ const getMenuItem = (fact: Fact) => {
 export const Vote = ({ contractAddresses }: VoteProps) => {
   const classes = useStyles();
 
-  const [tokenId, setTokenId] = useState<number>(0);
+  const [tokenId, setTokenId] = useState<number>(1);
   const [numVotesFor, setNumVotesFor] = useState(0);
   const [numVotesAgainst, setNumVotesAgainst] = useState(0);
 
@@ -86,14 +86,14 @@ export const Vote = ({ contractAddresses }: VoteProps) => {
       abi: factItemInterface,
       address: contractAddresses["FactItem"],
       method: "tokenURI",
-      args: [i],
+      args: [i + 1],
     });
 
     voteCalls.push({
       abi: voteMgrInterface,
       address: contractAddresses["VoteManager"],
       method: "getNumVotesForFact",
-      args: [i],
+      args: [i + 1],
     });
   }
 
@@ -106,7 +106,7 @@ export const Vote = ({ contractAddresses }: VoteProps) => {
   if (tokenURIRetVal !== undefined && numVotesRetVal !== undefined) {
     for (let i = 0; i < numFacts; i++) {
       facts.push({
-        tokenId: i,
+        tokenId: i + 1,
         url: String(tokenURIRetVal[i]),
         numVotesFor:
           numVotesRetVal[i] !== undefined && numVotesRetVal[i]![0] !== undefined
