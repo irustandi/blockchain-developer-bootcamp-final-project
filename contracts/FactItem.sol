@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 /**
-    @title A contract representing facts, using the ERC-721 standard
-    Each fact is supposed to be a URI to an article.
+ *  @title A contract representing facts, using the ERC-721 standard
+ *  @notice Each fact is supposed to be a URI to an article.
  */
 contract FactItem is ERC721Enumerable {
     using Counters for Counters.Counter;
@@ -18,9 +18,9 @@ contract FactItem is ERC721Enumerable {
     constructor() ERC721 ("FactItem", "FACT") {}
 
     /**
-        Mint a fact item. Cannot mint a URL/URI already previously minted.
-        @param factURL the URL/URI for the fact item
-        @return newItemId the token ID of the minted fact
+     *  @notice Mint a fact item. Cannot mint a URL/URI already previously minted.
+     *  @param factURL the URL/URI for the fact item
+     *  @return newItemId the token ID of the minted fact
      */
     function mintItem(
         string memory factURL
@@ -43,9 +43,9 @@ contract FactItem is ERC721Enumerable {
     }
 
     /**
-        Get the URL/URI associated with a particular fact.
-        @param tokenId the ID for the fact
-        @return the URL/URI for the fact
+     *  @notice Get the URL/URI associated with a particular fact.
+     *  @param tokenId the ID for the fact
+     *  @return the URL/URI for the fact
      */
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");

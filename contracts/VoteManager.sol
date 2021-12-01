@@ -4,9 +4,9 @@ pragma solidity 0.8.9;
 import "./FactItem.sol";
 
 /**
-    @title A contract managing votes associated with facts
-    Each vote can be of three kinds: FOR, AGAINST, or NEUTRAL.
-    NEUTRAL effectively removes the vote.
+ *  @title A contract managing votes associated with facts
+ *  @notice Each vote can be of three kinds: FOR, AGAINST, or NEUTRAL.
+ *  @notice NEUTRAL effectively removes the vote.
  */
 contract VoteManager {
     enum VoteChoice {
@@ -19,9 +19,9 @@ contract VoteManager {
     }
 
     /**
-        @param factId the ID for the fact
-        @param voter the address of the voter
-        @param vote the vote cast
+     *  @param factId the ID for the fact
+     *  @param voter the address of the voter
+     *  @param vote the vote cast
      */
     event Vote(uint indexed factId, address indexed voter, VoteChoice vote);
 
@@ -31,8 +31,8 @@ contract VoteManager {
     mapping (uint => VoteInfo) factVoteInfo;
 
     /**
-        Construct the vote manager.
-        @param _factItem the fact item contract
+     *  @notice Construct the vote manager.
+     *  @param _factItem the fact item contract
      */
     constructor(
         FactItem _factItem
@@ -41,9 +41,9 @@ contract VoteManager {
     }
 
     /**
-        Cast a vote for a fact.
-        @param _factId the ID for the fact
-        @param _vote the vote cast
+     *  @notice Cast a vote for a fact.
+     *  @param _factId the ID for the fact
+     *  @param _vote the vote cast
      */
     function vote(uint _factId, VoteChoice _vote) external {
         require(_factId <= factItem.totalSupply(), "non-existent fact for ID");
@@ -72,9 +72,9 @@ contract VoteManager {
     }
 
     /**
-        For a given voter, returns the number of facts for which the voter votes.
-        @param _addr the voter address
-        @return numFacts the number of facts voted on by the voter
+     *  @notice For a given voter, returns the number of facts for which the voter votes.
+     *  @param _addr the voter address
+     *  @return numFacts the number of facts voted on by the voter
      */
     function getNumVotedFactsForAddress(address _addr) view external returns (uint numFacts) {
         VoteInfo storage voteInfo = addressVoteInfo[_addr];
@@ -83,20 +83,20 @@ contract VoteManager {
     }
 
     /**
-        Get the associated vote for a voter and a fact
-        @param _addr the voter address
-        @param _factId the ID of the fact
-        @return vote the vote cast
+     *  @notice Get the associated vote for a voter and a fact
+     *  @param _addr the voter address
+     *  @param _factId the ID of the fact
+     *  @return vote the vote cast
      */
     function getVoteForAddress(address _addr, uint _factId) view external returns (VoteChoice vote) {
         vote = voteStatus[_addr][_factId];
     }
 
     /**
-        For a fact, get the number of votes (FOR and AGAINST) cast
-        @param _factId the ID of the fact
-        @return numVoteFor the number of FOR votes
-        @return numVoteAgainst the number of AGAINST votes
+     *  @notice For a fact, get the number of votes (FOR and AGAINST) cast
+     *  @param _factId the ID of the fact
+     *  @return numVoteFor the number of FOR votes
+     *  @return numVoteAgainst the number of AGAINST votes
      */
     function getNumVotesForFact(uint _factId) view external returns (uint numVoteFor, uint numVoteAgainst) {       
         VoteInfo storage voteInfo = factVoteInfo[_factId];
