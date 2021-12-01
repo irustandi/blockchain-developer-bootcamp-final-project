@@ -38,7 +38,9 @@ brownie run ./scripts/decentrafact_scripts/01_deploy_decentrafact_contracts.py -
 
 ## Front-End
 
-A basic front-end is available at (https://decentrafact.herokuapp.com)[https://decentrafact.herokuapp.com].
+A basic front-end is available at [https://decentrafact.herokuapp.com](https://decentrafact.herokuapp.com). The front-end is developed using React and [useDapp](https://usedapp.io/).
+
+Video demo: [https://vimeo.com/651811013/893a122ac1](https://vimeo.com/651811013/893a122ac1)
 
 ## ETH address for certificate NFT
 
