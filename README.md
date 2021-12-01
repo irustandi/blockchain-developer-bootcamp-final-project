@@ -10,15 +10,36 @@ One example: in the beginning of COVID-19, some people brought up the possibilit
 
 In the application, a user can have a couple of roles:
 
-- proposer: propose a news piece to be evaluated
-- evaluator: evaluate a news piece
+- proposer: propose a news piece (fact) to be evaluated
+- evaluator: evaluate (vote on) a news piece
 
-To facilitate meaningful activities, it is important to design the mechanism so that the incentives of the users are aligned properly. To achieve this, we propose a reward/punishment mechanisms using tokens specific to the app.
+Each fact is captured by an ERC721 token. At the moment, a vote is binary: either FOR or AGAINST. There is also an option to remove a vote. A restriction is that a proposer cannot vote on a fact that he/she proposed.
 
-Challenge: cannot rely on an oracle
-Probabilistic consensus
+To facilitate meaningful activities, it is important to design the mechanism so that the incentives of the users are aligned properly. This is not currently addressed yet, but to achieve this, a reward/punishment mechanism can be proposed using tokens specific to the app.
 
-TODO: governance mechanism
+## Dependencies
 
-Protocol token: FACT token
-Each news article is captured by an ERC721 token
+- [brownie](https://eth-brownie.readthedocs.io/en/stable/), along with the associated Python dependencies
+- For local testing, I use [hardhat](https://eth-brownie.readthedocs.io/en/stable/install.html#using-brownie-with-hardhat) in conjunction with brownie
+
+It is recommended to have a .env file with these variables:
+
+- WEB3_INFURA_PROJECT_ID
+- PRIVATE_KEY
+
+## Compiling and Testing
+
+- To compile, run 'brownie compile'
+- To test, run 'brownie test'
+
+It is possible to deploy to various networks (to rinkeby in the example) running
+
+brownie run ./scripts/decentrafact_scripts/01_deploy_decentrafact_contracts.py --network rinkeby
+
+## Front-End
+
+A basic front-end is available at (https://decentrafact.herokuapp.com)[https://decentrafact.herokuapp.com].
+
+## ETH address for certificate NFT
+
+0x15F3d667792f2E8C8D4822374120a57FD572f5fA

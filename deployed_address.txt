@@ -1,0 +1,3 @@
+Check front_end/chain-info/map.json. 
+
+The contracts are deployed to Rinkeby (chain ID 4) and Kovan (chain ID 42).
