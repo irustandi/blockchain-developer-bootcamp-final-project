@@ -17,6 +17,13 @@ Each fact is captured by an ERC721 token. At the moment, a vote is binary: eithe
 
 To facilitate meaningful activities, it is important to design the mechanism so that the incentives of the users are aligned properly. This is not currently addressed yet, but to achieve this, a reward/punishment mechanism can be proposed using tokens specific to the app.
 
+## Directory Structure
+
+- contracts/, contains the smart contract implementation
+- front_end/, contains the front-end code
+- scripts/, contains the deployment script
+- tests/, contains unit tests
+
 ## Dependencies
 
 - [brownie](https://eth-brownie.readthedocs.io/en/stable/), along with the associated Python dependencies
