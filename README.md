@@ -22,6 +22,8 @@ To facilitate meaningful activities, it is important to design the mechanism so 
 - [brownie](https://eth-brownie.readthedocs.io/en/stable/), along with the associated Python dependencies
 - For local testing, I use [hardhat](https://eth-brownie.readthedocs.io/en/stable/install.html#using-brownie-with-hardhat) in conjunction with brownie
 
+Credit to Chainlink for providing the [brownie starter kit](https://github.com/smartcontractkit/chainlink-mix).
+
 It is recommended to have a .env file with these variables:
 
 - WEB3_INFURA_PROJECT_ID
